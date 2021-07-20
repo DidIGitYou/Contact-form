@@ -3,11 +3,14 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
 
 // View engine setup
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({
+  defaultLayout: false
+}));
 app.set('view engine', 'handlebars');
 
 // Static folder
@@ -37,16 +40,12 @@ app.post('/send', (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: 'mail.domain.com', //you can also use your gmail ID. Check the nodemailer docs for inputting your gmail id
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    service: 'gmail',
     auth: {
-        user: '______' , //Your mail inside string literals
-        pass: '_______' //Your pass inside the string literals
-    },
-    tls:{
-      rejectUnauthorized:false
+        user: process.env.EMAIL_USER , 
+        pass: process.env.EMAIL_PASS 
     }
+
   });
 
   // setup email data with unicode symbols
