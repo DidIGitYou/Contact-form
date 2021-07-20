@@ -1,9 +1,13 @@
-# basic-nodemailer-app
+# Contact-form
 
-A basic application made using node module "nodemailer" which can be embedded into one's own application
->This can also be embedded as it's own webapp, but since it is very basic, It would need some development. 
+![logo]
 
-## Install dependencies using: npm install
+A very basic contact form which mails you the information filled using 
 
-## Run using: node app.js
+### Install dependencies using: npm install
 
+### Run using: node app.js
+
+
+
+[logo]: https://i1.wp.com/community.nodemailer.com/wp-content/uploads/2015/10/n2-2.png?w=422&ssl=1 "Nodemailer"
