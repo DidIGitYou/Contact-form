@@ -2,7 +2,8 @@
 
 ![logo]
 
-A very basic contact form which mails you the information filled using 
+A very basic contact form which mails you the information filled using NODEMAILER
+
 
 ### Install dependencies using: npm install
 
